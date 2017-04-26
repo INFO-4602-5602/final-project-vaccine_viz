@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Xiaolei">
+<title>Online Vaccination Behavior Analysis</title>
+
+<link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="./css/dashboard.css">
+
+<!-- Support-->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="./dist/js/bootstrap.min.js"></script>
+
+<!-- Toipic-->
+<script src="./js/viz/topic_dist.js"></script>
+<script src="./js/viz/d3.layout.cloud.js"></script>
+<script src="./js/viz/wordcloud.js"></script>
+
+<!-- Map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script type="text/javascript" src="./js/us-states.js"></script>
+
+
+<!-- Gender Bar -->
+<script type="text/javascript" src="./js/viz/gender_bar.js"></script>
+
+<!-- Weekly/Monthly Trends -->
+<script src="./js/moment.min.js" charset="utf-8"></script>
+
+
+<style>
+
+</style>
+</head>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Online Vaccination Behavior Analysis</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Results Analysis</a></li>
+                    <li><a href="modelanalysis.html">Model Analysis</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div><!--.nav-collapse -->
+        </div>
+    </nav>
+	
+	<!-- Start -->
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Topic Distribution -->
+			<div class="col-sm-8" id="topic_dist_div">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Topic Distribution Overtime
+					</div>
+					<div class="chart-stage">
+						<svg id="topic_dist" width="100%" height="600"></svg>
+						<script>
+						topic_dist();
+						</script>
+					</div>
+					<div class="chart-notes">
+					A cool application of Topic Model: https://github.com/bmabey/pyLDAvis;http://bl.ocks.org/duopixel/3824661
+					</div>
+				</div>
+			</div>
+			<!-- Word Cloud -->
+			<div class="col-sm-4">
+			<div class="chart-wrapper">
+				<div class="chart-title">
+				World Cloud by Each Topic
+				</div>
+				<div class="chart-stage" id='wordcloud'>
+				<div style="padding: 5px; background-color: #e8e8e8; display: inline-block; width: 100%; height: 50px;">
+					<label style="font-family: sans-serif; font-size: 14px; margin-left:20%;">Selected Topic: 
+					</label>
+					<input style="width: 50px" type="text" value="1" min="1" max="10" id="lda_topic_num">
+					<button id="lda_topic_down" style="margin-left: 5px" onclick="update_wordcloud('down')">Previous Topic</button>
+					<button id="lda_topic_up" style="margin-left: 5px" onclick="update_wordcloud('up')">Next Topic</button>
+					<button id="lda_topic_restart" style="margin-left: 5px" onclick="update_wordcloud('clear')">Restart</button>
+				</div>
+
+				</div>
+				<script>
+					wordcloud_initialization(0);
+				</script>
+				<div class="chart-notes">
+				Notes about this chart
+				</div>
+			</div>
+				</div>
+			</div>
+		
+		<div class="row">
+			<!-- Monthly Report -->
+			<div class="col-sm-8">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Language Usage Analysis
+					</div>
+					<div class="chart-stage" style="height:300px;">
+											</div>
+					<div class="chart-notes">
+					Notes about this chart
+					</div>
+				</div>
+			</div>
+			<!-- Gender Analysis -->
+			<div class="col-sm-4">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Gender Analysis: Bar Chart
+					</div>
+					
+					<div class="chart-stage"  style="height:300px;width=50%;">
+						<table>
+							<tr>
+								<td id="gender_bar_col"><svg id="gender_bar"></svg></td>
+								<td>
+									<span style="font-family:Impact;font-size:50;">
+									Select the category of statistic
+									</span>
+									<br/><br/>
+									<span style="font-family:'Times New Roman', Georgia, Serif;font-size:50;">Current View:</span>
+									&nbsp;&nbsp;
+									<select id="gender_bin_select" style="font-family:'Times New Roman', Georgia, Serif;font-size:50;" onchange="change_bar(this.value)">
+										<option value = "overall" selected="selected">Overview</option>
+										<option value = "female">Female</option>
+										<option value = "male">Male</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<script>
+						gender_bar_chart();
+					</script>
+					<div class="chart-notes">
+					Extension: http://bl.ocks.org/NPashaP/96447623ef4d342ee09b
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<!-- Weekly Report -->
+			<div class="col-sm-8">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Monthly Trends/Weekly Trends
+					</div>
+					<div class="chart-stage chart_wm_trends">
+						<div id="trends_options" style="margin-left:40%">
+							<input type="radio" value="monthly" name="selector" checked> Monthly Trends 
+							<input type="radio" value="weekly" name="selector" style="margin-left:20px"> Weekly Trends
+						</div>
+						<div class="tt"></div>
+					</div>
+					<!-- application script -->
+					<script src="./js/viz/weekly_monthly_trends.js"></script>
+					
+					<div class="chart-notes">
+					Notes about this chart
+					</div>
+				</div>
+			</div>
+			<!-- Word Cloud -->
+			<div class="col-sm-4">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Region Analysis
+					</div>
+					<div class="chart-stage" style="height:600px;">
+					</div>
+					<div class="chart-notes">
+						Notes about this chart
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<!-- Geolocation Report -->
+			<div class="col-sm-8">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Geospatial Visualization
+					</div>
+					<script type="text/javascript" src="./js/viz/map.js"></script>
+					<div class="chart-stage" style="height:600px;">
+						<div id='map'></div><script>viz_map();</script>
+					</div>
+					<div class="chart-notes">
+					Notes about this chart
+					</div>
+				</div>
+			</div>
+			<!-- Word Cloud -->
+			<div class="col-sm-4">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Sentiment Analysis of Gender
+					</div>
+					<div class="chart-stage" style="height:600px;">
+					</div>
+					<div class="chart-notes">
+					Notes about this chart
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+
+</html>

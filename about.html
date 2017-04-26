@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Xiaolei">
+
+<link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="./css/dashboard.css">
+
+<!-- Support-->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="./dist/js/bootstrap.min.js"></script>
+
+
+<style>
+</style>
+</head>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Online Vaccination Behavior Analysis</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Results Analysis</a></li>
+                    <li><a href="modelanalysis.html">Model Analysis</a></li>
+                    <li class="active"><a href="about.html">About</a></li>
+                </ul>
+            </div><!--.nav-collapse -->
+        </div>
+    </nav>
+	
+	<!-- Start -->
+	<div class="container-fluid">
+		
+		
+		<div class="row">
+			<!-- Weekly Report -->
+			<div class="col-sm-8">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Some Charts here
+					</div>
+					<div class="chart-stage" style="height:300px;">
+						<div id="test_test"></div>
+					</div>
+					<div class="chart-notes">
+					Notes about this chart
+					</div>
+				</div>
+			</div>
+			<!-- Word Cloud -->
+			<div class="col-sm-4">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Region Analysis
+					</div>
+					<div class="chart-stage" style="height:300px;">
+					</div>
+					<div class="chart-notes">
+					Notes about this chart
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
