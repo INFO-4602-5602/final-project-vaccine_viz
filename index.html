@@ -20,6 +20,8 @@
 <script src="./js/viz/topic_dist.js"></script>
 <script src="./js/viz/d3.layout.cloud.js"></script>
 <script src="./js/viz/wordcloud.js"></script>
+<script src="./js/viz/language_analysis.js"></script>
+
 
 <!-- Map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
@@ -117,11 +119,13 @@
 					<div class="chart-title">
 						Language Usage Analysis
 					</div>
-					<div class="chart-stage" style="height:300px;">
-											</div>
+					<div class="chart-stage" style="height:300px;" id="language_usage"></div>
 					<div class="chart-notes">
 					Notes about this chart
 					</div>
+                    <script type="text/javascript">
+                        language_bubbles();
+                    </script>
 				</div>
 			</div>
 			<!-- Gender Analysis -->
