@@ -30,13 +30,13 @@ function viz_map(){
 
 	// get color depending on population density value
 	function getColor(d) {
-		return d > 1000 ? '#800026' :
-				d > 500  ? '#BD0026' :
-				d > 200  ? '#E31A1C' :
-				d > 100  ? '#FC4E2A' :
-				d > 50   ? '#FD8D3C' :
-				d > 20   ? '#FEB24C' :
-				d > 10   ? '#FED976' :
+		return d > 1.4 ? '#800026' :
+				d > 1.3  ? '#BD0026' :
+				d > 1.2  ? '#E31A1C' :
+				d > 1.1  ? '#FC4E2A' :
+				d > 1.0   ? '#FD8D3C' :
+				d > 0.9  ? '#FEB24C' :
+				d > 0.8   ? '#FED976' :
 							'#FFEDA0';
 	}
 
@@ -92,15 +92,13 @@ function viz_map(){
 		onEachFeature: onEachFeature
 	}).addTo(map);
 
-	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
-
 
 	var legend = L.control({position: 'bottomright'});
 
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+			grades = [0, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4],
 			labels = [],
 			from, to;
 
