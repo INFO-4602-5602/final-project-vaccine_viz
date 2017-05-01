@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Xiaolei">
+<meta name="author" content="Xiaolei Matt">
+<link rel="icon" href="./resources/images/icon.jpg">
+<title>Machine Learning Model Analysis</title>
 
 <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="./dist/css/bootstrap-theme.min.css">
@@ -53,169 +55,169 @@
 						Classifier Analysis
 					</div>
 					<div class="chart-stage" style="height:800px;">
-						<div id="clf_analysis">
+						<div id="clf_analysis" style="overflow:scroll;">
 							<table id="model_analysis" border="2" width="100%" height="100%" style="text-align:center;">
-	<tr>
-		<td>Text</td>
-		<td>Prediction - Other Mentions</td>
-		<td>Prediction - Inention</td>
-		<td>True Label</td>
-	</tr>
-	<tr>
-		<td>
-			“ <user> : Guess what <user> I <font size="6" color="rgb(0,69,0)">got</font> the <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(0,8,0)">shot</font> all by myself ! <repeat> <hashtag> whaaaaaaa <font size="6" color="rgb(0,14,0)">lol</font>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="15.27" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">15.27 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="84.73" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">84.73 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<font size="6">😁</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<font size="6" color="rgb(79,0,0)">oh</font> i didn't get a <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(0,8,0)">shot</font> in the <font size="6" color="rgb(0,24,0)">arm</font> i <font size="6" color="rgb(0,69,0)">got</font> a <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(0,8,0)">shot</font> up the <font size="6" color="rgb(0,23,0)">nose</font>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="1.37" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">1.37 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="98.63" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">98.63 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<font size="6">😁</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Nurses Fired for Refusing Flu Shot - Yahoo ! News <url> via <user>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="95.48" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">95.48 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="4.52" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">4.52 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<font size="6">😡</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			I have to get my <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(0,8,0)">shot</font> <font size="6" color="rgb(101,0,0)">tomorrow</font> 😁 💉
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="6.69" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">6.69 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="93.31" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">93.31 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<font size="6">😁</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Lady <font size="6" color="rgb(0,38,0)">told</font> me <font size="6" color="rgb(0,4,0)">come</font> get a <font size="6" color="rgb(150,0,0)">free</font> <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(0,8,0)">shot</font> I <font size="6" color="rgb(0,50,0)">asked</font> if there was <font size="6" color="rgb(0,50,0)">ebola</font> in it she was lookin <font size="6" color="rgb(0,16,0)">sick</font> 😂 😂
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="45.96" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">45.96 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="54.04" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">54.04 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<font size="6">😡</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<user> Flu <font size="6" color="rgb(200,0,0)">shots</font> only <font size="6" color="rgb(125,0,0)">protect</font> you against one <font size="6" color="rgb(0,61,0)">specific</font> <font size="6" color="rgb(79,0,0)">strain</font> . In a <font size="6" color="rgb(0,17,0)">gathering</font> , they're <font size="6" color="rgb(0,63,0)">useless</font> .
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="81.07" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">81.07 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="18.93" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">18.93 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<font size="6">😡</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			We <font size="6" color="rgb(0,69,0)">got</font> our <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(200,0,0)">shots</font> <font size="6" color="rgb(166,0,0)">today</font> 💉 & Alessa wasn't a <font size="6" color="rgb(0,136,0)">happy</font> <font size="6" color="rgb(0,12,0)">baby</font> 😔
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="5.36" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">5.36 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="94.64" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">94.64 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<font size="6">😁</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			GPs <font size="6" color="rgb(0,38,0)">told</font> to <font size="6" color="rgb(0,34,0)">order</font> <font size="6" color="rgb(0,38,0)">child</font> <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(0,9,0)">vaccine</font> themselves from January | News Article | Pulse Today <url>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="85.7" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">85.7 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="14.3" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">14.3 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<font size="6">😡</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Flu <font size="6" color="rgb(200,0,0)">shots</font> <font size="6" color="rgb(0,7,0)">hurts</font> so <font size="6" color="rgb(147,0,0)">bad</font> 😭
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="22.55" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">22.55 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="77.45" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">77.45 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<font size="6">😁</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			The Flu Shot Doesn't Work Immediately <url> <hashtag>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="64.29" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">64.29 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="35.71" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">35.71 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<font size="6">😡</font>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Need to get that <font size="6" color="rgb(0,71,0)">flu</font> <font size="6" color="rgb(0,8,0)">shot</font> after my <font size="6" color="rgb(0,68,0)">cold</font> is <font size="6" color="rgb(0,32,0)">gone</font> 😭
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="28.63" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">28.63 %</text><text x="200" y="9.5" dy=".35em"></text></g></svg>
-		</td>
-		<td>
-			<svg width="100%" height="60px"><g transform="translate(0,20)"><rect width="71.37" height="19" fill="steelblue"></rect><text x="120" y="9.5" dy=".35em">71.37 %</text><text x="200" y="9.5" dy=".35em">👈</text></g></svg>
-		</td>
-		<td>
-			<font size="6">😁</font>
-		</td>
-	</tr>
-</table>
+								<tr>
+									<td>Text</td>
+									<td>Prediction - Other Mentions</td>
+									<td>Prediction - Inention</td>
+									<td>True Label</td>
+								</tr>
+								<tr>
+									<td>
+										“ <user> : Guess what <user> I <font size="6" color="rgb(0,10,0)">got</font> the <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,40,0)">shot</font> all by myself ! <repeat> <hashtag> whaaaaaaa <font size="6" color="rgb(0,22,0)">lol</font>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="15.27" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">15.27 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="84.73" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">84.73 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<font size="6">😁</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<font size="6" color="rgb(0,34,0)">oh</font> i didn't get a <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,40,0)">shot</font> in the <font size="6" color="rgb(0,51,0)">arm</font> i <font size="6" color="rgb(0,10,0)">got</font> a <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,40,0)">shot</font> up the <font size="6" color="rgb(0,11,0)">nose</font>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="1.37" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">1.37 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="98.63" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">98.63 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<font size="6">😁</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Nurses Fired for Refusing Flu Shot - Yahoo ! News <url> via <user>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="95.48" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">95.48 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="4.52" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">4.52 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<font size="6">😡</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										I have to get my <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,40,0)">shot</font> <font size="6" color="rgb(0,13,0)">tomorrow</font> 😁 💉
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="6.69" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">6.69 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="93.31" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">93.31 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<font size="6">😁</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Lady <font size="6" color="rgb(0,17,0)">told</font> me <font size="6" color="rgb(37,0,0)">come</font> get a <font size="6" color="rgb(0,29,0)">free</font> <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,40,0)">shot</font> I <font size="6" color="rgb(17,0,0)">asked</font> if there was <font size="6" color="rgb(40,0,0)">ebola</font> in it she was lookin <font size="6" color="rgb(163,0,0)">sick</font> 😂 😂
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="45.96" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">45.96 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="54.04" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">54.04 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<font size="6">🙋</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<user> Flu <font size="6" color="rgb(0,25,0)">shots</font> only <font size="6" color="rgb(14,0,0)">protect</font> you against one <font size="6" color="rgb(60,0,0)">specific</font> <font size="6" color="rgb(0,104,0)">strain</font> . In a <font size="6" color="rgb(0,35,0)">gathering</font> , they're <font size="6" color="rgb(0,64,0)">useless</font> .
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="81.07" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">81.07 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="18.93" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">18.93 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<font size="6">😡</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										We <font size="6" color="rgb(0,10,0)">got</font> our <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,25,0)">shots</font> <font size="6" color="rgb(73,0,0)">today</font> 💉 & Alessa wasn't a <font size="6" color="rgb(82,0,0)">happy</font> <font size="6" color="rgb(0,1,0)">baby</font> 😔
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="5.36" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">5.36 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="94.64" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">94.64 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<font size="6">😁</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										GPs <font size="6" color="rgb(0,17,0)">told</font> to <font size="6" color="rgb(0,82,0)">order</font> <font size="6" color="rgb(0,32,0)">child</font> <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,4,0)">vaccine</font> themselves from January | News Article | Pulse Today <url>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="85.7" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">85.7 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="14.3" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">14.3 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<font size="6">😡</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Flu <font size="6" color="rgb(0,25,0)">shots</font> <font size="6" color="rgb(0,9,0)">hurts</font> so <font size="6" color="rgb(63,0,0)">bad</font> 😭
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="22.55" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">22.55 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="77.45" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">77.45 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<font size="6">😁</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										The Flu Shot Doesn't Work Immediately <url> <hashtag>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="64.29" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">64.29 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="35.71" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">35.71 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<font size="6">😡</font>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Need to get that <font size="6" color="rgb(0,97,0)">flu</font> <font size="6" color="rgb(0,40,0)">shot</font> after my <font size="6" color="rgb(0,6,0)">cold</font> is <font size="6" color="rgb(24,0,0)">gone</font> 😭
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="28.63" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">28.63 %</text><text x="75" y="19.5" dy="1.35em"></text></g></svg>
+									</td>
+									<td>
+										<svg width="100%" height="60px"><g transform="translate(0,10)"><rect width="71.37" height="19" fill="steelblue"></rect><text x="10" y="19.5" dy="1.35em">71.37 %</text><text x="75" y="19.5" dy="1.35em">👈</text></g></svg>
+									</td>
+									<td>
+										<font size="6">😁</font>
+									</td>
+								</tr>
+							</table>
 						</div>
 					</div>
 					<div class="chart-notes">

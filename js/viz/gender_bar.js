@@ -24,10 +24,11 @@ function gender_bar_chart(){
 		.append("g")
 		.attr("transform", 
 			"translate(" + margin.left + "," + margin.top + ")");
-			
+	var tooltip = d3.select("body").append("div").attr("class", "gender_toolTip");		
 	d3.csv("./resources/gender/"+filename, function(error, data) {
 		if (error) throw error;
-
+		var total = d3.sum(data, function(d) { return d.number;});
+		
 		// Scale the range of the data in the domains
 		x.domain(data.map(function(d) { return d.type; }));
 		y.domain([d3.min(data, function(d) { return parseInt(d.number); })/2, d3.max(data, function(d) { return parseInt(d.number)*1.01; })]);
@@ -41,7 +42,14 @@ function gender_bar_chart(){
 			.attr("x", function(d) { return x(d.type); })
 			.attr("width", x.bandwidth())
 			.attr("y", function(d) { return y(parseInt(d.number)); })
-			.attr("height", function(d) { return height - y(parseInt(d.number)); });
+			.attr("height", function(d) { return height - y(parseInt(d.number)); })
+			.on("mousemove", function(d){
+				tooltip
+				  .style("left", d3.event.pageX - 50 + "px")
+				  .style("top", d3.event.pageY - 70 + "px")
+				  .style("display", "inline-block")
+				  .html((d.type) + "<br>" + (d.number/total).toFixed(2) + "%");
+			}).on("mouseout", function(d){ tooltip.style("display", "none");});;
 
 		// add the x Axis
 		svg.append("g")
@@ -80,6 +88,7 @@ function change_bar(option_name){
 		.attr("transform", 
 			"translate(" + margin.left + "," + margin.top + ")");
 	
+	var tooltip = d3.select("body").append("div").attr("class", "gender_toolTip");
 	d3.csv("./resources/gender/"+filename, function(error, data) {
 		if (error) throw error;
 		// Scale the range of the data in the domains
@@ -87,6 +96,10 @@ function change_bar(option_name){
 		yrange.domain([d3.min(data, function(d) { return parseInt(d.number); })/2, d3.max(data, function(d) { return parseInt(d.number)*1.01; })]);
 		
 		console.log(yrange);
+		
+		var total = d3.sum(data, function(d) { return d.number;});
+		
+		console.log(total)
 		
 		// append the rectangles for the bar chart
 		svg.selectAll(".bar")
@@ -96,7 +109,14 @@ function change_bar(option_name){
 			.attr('fill','steelblue')
 			.attr("class", "bar")
 			.attr("x", function(d) { return xrange(d.type); })
-			.attr("width", xrange.bandwidth());
+			.attr("width", xrange.bandwidth())
+			.on("mousemove", function(d){
+			tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 70 + "px")
+              .style("display", "inline-block")
+              .html((d.type) + "<br>" + (d.number/total).toFixed(2) + "%");
+		}).on("mouseout", function(d){ tooltip.style("display", "none");});;
 			
 		var bars = svg.selectAll(".bar");
 		
@@ -104,7 +124,7 @@ function change_bar(option_name){
 		.transition()
 		.duration(1000)
 		.attr("y", function(d) { return yrange(parseInt(d.number)); })
-		.attr("height", function(d) { return height - yrange(parseInt(d.number)); });
+		.attr("height", function(d) { return height - yrange(parseInt(d.number));});
 
 		// add the x Axis
 		svg.append("g")
