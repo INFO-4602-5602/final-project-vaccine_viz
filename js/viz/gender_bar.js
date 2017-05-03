@@ -86,8 +86,6 @@ function change_bar(option_name){
 		xrange.domain(data.map(function(d) { return d.type; }));
 		yrange.domain([d3.min(data, function(d) { return parseInt(d.number); })/2, d3.max(data, function(d) { return parseInt(d.number)*1.01; })]);
 		
-		console.log(yrange);
-		
 		// append the rectangles for the bar chart
 		svg.selectAll(".bar")
 			.data(data)

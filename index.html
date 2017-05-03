@@ -120,12 +120,43 @@
 					<div class="chart-title">
 						Language Usage Analysis
 					</div>
-					<div class="chart-stage" style="height:300px;" id="language_usage"></div>
+                    <div style="padding-top:20px;padding-left:20px;font-size:16px;">
+                        Year: <select id='yearSelect' onchange="changeYear();load_bubbles()">
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                        </select>
+                        &nbsp;
+                        Month: <select id='monthSelect' onchange="load_bubbles();">
+                            <option id='januarySelect'>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        &nbsp;
+                        Took Vaccine? <select id='tookVaccineSelect' onchange="load_bubbles()">
+                            <option>yes</option>
+                            <option>no</option>
+                        </select>
+                    </div>
+					<div class="chart-stage" style="height:300px;" id="language_usage">
+                    </div>
 					<div class="chart-notes">
 					Notes about this chart
 					</div>
                     <script type="text/javascript">
-                        language_bubbles();
+                        init_options();
+                        load_bubbles();
                     </script>
 				</div>
 			</div>
