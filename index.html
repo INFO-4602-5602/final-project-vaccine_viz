@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Xiaolei">
+<meta name="author" content="Xiaolei Matt">
+<link rel="icon" href="./resources/images/icon.jpg">
 <title>Online Vaccination Behavior Analysis</title>
 
 <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
@@ -93,9 +94,10 @@
 				World Cloud by Each Topic
 				</div>
 				<div class="chart-stage" id='wordcloud'>
-				<div style="padding: 5px; background-color: #e8e8e8; display: inline-block; width: 100%; height: 50px;">
-					<label style="font-family: sans-serif; font-size: 14px; margin-left:20%;">Selected Topic: 
+				<div style="padding: 5px; background-color: #e8e8e8; display: block; width: 100%; height: 65px;margin-left:auto; margin-right:auto; text-align:center">
+					<label style="font-family: sans-serif; font-size: 14px;">Selected Topic: 
 					</label>
+					<br/>
 					<input style="width: 50px" type="text" value="1" min="1" max="10" id="lda_topic_num">
 					<button id="lda_topic_down" style="margin-left: 5px" onclick="update_wordcloud('down')">Previous Topic</button>
 					<button id="lda_topic_up" style="margin-left: 5px" onclick="update_wordcloud('up')">Next Topic</button>

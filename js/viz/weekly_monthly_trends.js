@@ -2,7 +2,7 @@
 //Pin the width and height to the .chart_wm_trends div
 var margin = {
         top: 20,
-        right: 80,
+        right: 30,
         bottom: 50,
         left: 50
     },
